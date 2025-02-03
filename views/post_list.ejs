@@ -7,9 +7,9 @@
     <% postList.results.forEach(function(post) {%>
         <li>
             <article>
-                <div style="display: flex;">
+                <div>
                     <img src="<%= post.postedBy.profileImageUrl %>" alt="User Profile image" width="50" height="50"> 
-                    <h3><%= post.postedBy.name %></h3>
+                  <span><%= post.postedBy.name %></span>
                 </div>
                 <div>
                     <img src="<%= post.imageUrl %>" alt="Post Image" width="200" height="200">
@@ -22,131 +22,14 @@
         </li>
     <% }); %>
 </ol>
+
+<%if (postList.next) { %>
+  <a href="<%= postList.next %>">Next</a>
+<% } %>
+<%if (postList.previous) { %>
+  <a href="<%= postList.previous %>">Previous</a>
+<% } %>
+
 </body>
 <%- include('_footer') -%>
 </html>
-
-
-<!-- {
-    id: 6,
-    message: 'Centralized dedicated hierarchy',
-    imageUrl: 'https://picsum.photos/id/844/600',
-    createdAt: 2021-01-25T02:37:17.000Z,
-    postedBy: {
-      id: 29,
-      name: 'Mommy Ipsley',
-      username: 'mipsleys',
-      email: 'mipsleys@samsung.com',
-      profileImageUrl: 'https://robohash.org/mipsleys.png?bgset=bg1',
-      coverImageUrl: 'https://picsum.photos/id/381/2100/800'
-    },
-    likedBy: [
-      {
-        id: 41,
-        name: 'Alf Berre',
-        username: 'aberre14',
-        email: 'aberre14@un.org',
-        profileImageUrl: 'https://robohash.org/aberre14.png?bgset=bg1',
-        coverImageUrl: 'https://picsum.photos/id/486/2100/800'
-      },
-      {
-        id: 48,
-        name: 'Annemarie Iashvili',
-        username: 'aiashvili1b',
-        email: 'aiashvili1b@fastcompany.com',
-        profileImageUrl: 'https://robohash.org/aiashvili1b.png?bgset=bg1',
-        coverImageUrl: 'https://picsum.photos/id/47/2100/800'
-      },
-      {
-        id: 51,
-        name: 'Ambrosi Ivett',
-        username: 'aivett1e',
-        email: 'aivett1e@bbc.co.uk',
-        profileImageUrl: 'https://robohash.org/aivett1e.png?bgset=bg1',
-        coverImageUrl: 'https://picsum.photos/id/536/2100/800'
-      },
-      {
-        id: 21,
-        name: 'Audrie Laslett',
-        username: 'alaslettk',
-        email: 'alaslettk@cpanel.net',
-        profileImageUrl: 'https://robohash.org/alaslettk.png?bgset=bg1',
-        coverImageUrl: 'https://picsum.photos/id/222/2100/800'
-      },
-      {
-        id: 97,
-        name: 'Biddie Bezant',
-        username: 'bbezant2o',
-        email: 'bbezant2o@acquirethisname.com',
-        profileImageUrl: 'https://robohash.org/bbezant2o.png?bgset=bg1',
-        coverImageUrl: 'https://picsum.photos/id/59/2100/800'
-      },
-      {
-        id: 10,
-        name: 'Berkie Saddler',
-        username: 'bsaddler9',
-        email: 'bsaddler9@github.com',
-        profileImageUrl: 'https://robohash.org/bsaddler9.png?bgset=bg1',
-        coverImageUrl: 'https://picsum.photos/id/341/2100/800'
-      },
-      {
-        id: 80,
-        name: 'Chrysa Bolter',
-        username: 'cbolter27',
-        email: 'cbolter27@icq.com',
-        profileImageUrl: 'https://robohash.org/cbolter27.png?bgset=bg1',
-        coverImageUrl: 'https://picsum.photos/id/986/2100/800'
-      },
-      {
-        id: 19,
-        name: 'Colette Howarth',
-        username: 'chowarthi',
-        email: 'chowarthi@narod.ru',
-        profileImageUrl: 'https://robohash.org/chowarthi.png?bgset=bg1',
-        coverImageUrl: 'https://picsum.photos/id/588/2100/800'
-      },
-      {
-        id: 37,
-        name: 'Daisie Bricket',
-        username: 'dbricket10',
-        email: 'dbricket10@4shared.com',
-        profileImageUrl: 'https://robohash.org/dbricket10.png?bgset=bg1',
-        coverImageUrl: 'https://picsum.photos/id/2/2100/800'
-      },
-      {
-        id: 73,
-        name: 'Isidore Jordon',
-        username: 'ijordon20',
-        email: 'ijordon20@weather.com',
-        profileImageUrl: 'https://robohash.org/ijordon20.png?bgset=bg1',
-        coverImageUrl: 'https://picsum.photos/id/428/2100/800'
-      }
-    ],
-    dislikedBy: [
-      {
-        id: 66,
-        name: 'Briana Larder',
-        username: 'blarder1t',
-        email: 'blarder1t@mac.com',
-        profileImageUrl: 'https://robohash.org/blarder1t.png?bgset=bg1',
-        coverImageUrl: 'https://picsum.photos/id/630/2100/800'
-      },
-      {
-        id: 99,
-        name: 'Cortney McKie',
-        username: 'cmckie2q',
-        email: 'cmckie2q@qq.com',
-        profileImageUrl: 'https://robohash.org/cmckie2q.png?bgset=bg1',
-        coverImageUrl: 'https://picsum.photos/id/894/2100/800'
-      },
-      {
-        id: 94,
-        name: 'Lidia Zisneros',
-        username: 'lzisneros2l',
-        email: 'lzisneros2l@hao123.com',
-        profileImageUrl: 'https://robohash.org/lzisneros2l.png?bgset=bg1',
-        coverImageUrl: 'https://picsum.photos/id/317/2100/800'
-      }
-    ]
-  }
- -->
