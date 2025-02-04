@@ -3,13 +3,14 @@
 <%- include('_header') -%>
 <body>
 <h1>Posts</h1>
+<a href="/posts/create">Create a Post</a>
 <ol>
     <% postList.results.forEach(function(post) {%>
         <li>
             <article>
                 <div>
                     <img src="<%= post.postedBy.profileImageUrl %>" alt="User Profile image" width="50" height="50"> 
-                  <span><%= post.postedBy.name %></span>
+                    <span><%= post.postedBy.name %></span>
                 </div>
                 <div>
                     <img src="<%= post.imageUrl %>" alt="Post Image" width="200" height="200">
@@ -22,14 +23,14 @@
         </li>
     <% }); %>
 </ol>
-
-<%if (postList.next) { %>
-  <a href="<%= postList.next %>">Next</a>
-<% } %>
-<%if (postList.previous) { %>
-  <a href="<%= postList.previous %>">Previous</a>
-<% } %>
-
+<footer>
+    <%if (postList.next) { %>
+    <a href="<%= postList.next %>">Next</a>
+    <% } %>
+    <%if (postList.previous) { %>
+    <a href="<%= postList.previous %>">Previous</a>
+    <% } %>
+</footer>
 </body>
 <%- include('_footer') -%>
 </html>
