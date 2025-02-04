@@ -18,6 +18,12 @@
                 </div>
                 <footer>
                     <%= post.likedBy.length %> likes <%= post.dislikedBy.length %> dislikes
+                    <form method="post" action="<%=post.id%>/like">
+                        <button type="submit">👍</button>
+                    </form>
+                    <form method="post" action="<%=post.id%>/dislike">
+                        <button type="submit">👎</button>
+                    </form>
                 </footer>
             </article>
         </li>
