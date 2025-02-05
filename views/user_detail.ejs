@@ -1,15 +1,27 @@
 <html lang="en-gb">
 <%- include('_head') -%>
-<%- include('_header') -%>
 <body>
-    <h1><%= user.name %></h1>
-    <img src="<%= user.profileImageUrl %>" alt="User Profile image" width="50" height="50"> 
-    <span><%= user.email %></span>
-    <ol>
-        <% user.posts.map(post => {%>
-            <li><%= post.message %> - <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %></li>
-        <%})%>
-    </ol>
+    
+    <div class="user-profile-container" style="background-image: url('<%= user.coverImageUrl%>');">
+        <div class="user-details-container">
+            <img src="<%= user.profileImageUrl %>" alt="User Profile image" class="user-details-image"> 
+            <div class="user-name-container">
+                <h1><%= user.name %></h1>
+                <div><%= user.username %></div>
+                <div class="user-email"><%= user.email %></div>
+            </div>
+        </div>
+    </div>
+    <div class="user-posts-container">
+        <span><%=user.name%></span>'s Posts
+        <ul>
+            <% user.posts.map(post => {%>
+                 <li>
+                    <%- include('post', {post: post}) %>
+                 </li>
+            <%})%>
+        </ul>
+    </div>
 </body>
 <%- include('_footer') -%>
 </html>
