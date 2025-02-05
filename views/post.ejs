@@ -10,10 +10,10 @@
             <footer>
                 <div class="likebuttons-container">
                     <form method="post" action="<%=post.id%>/like">
-                    <button type="submit"><%= post.likedBy.length %> 👍</button>
+                        <button type="submit"><%= post.likedBy.length %> 👍</button>
                     </form>
                     <form method="post" action="<%=post.id%>/dislike">
-                    <button type="submit"><%= post.dislikedBy.length %> 👎</button>
+                        <button type="submit"><%= post.dislikedBy.length %> 👎</button>
                     </form>
                 </div>
             </footer>

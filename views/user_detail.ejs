@@ -2,14 +2,14 @@
 <%- include('_head') -%>
 <%- include('_header') -%>
 <body>
-<h1><%= user.name %></h1>
-<img src="<%= user.profileImageUrl %>" alt="User Profile image" width="50" height="50"> 
-<span><%= user.email %></span>
-<ol>
-    <% user.posts.map(post => {%>
-        <li><%= post.message %> - <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %></li>
-    <%})%>
-</ol>
+    <h1><%= user.name %></h1>
+    <img src="<%= user.profileImageUrl %>" alt="User Profile image" width="50" height="50"> 
+    <span><%= user.email %></span>
+    <ol>
+        <% user.posts.map(post => {%>
+            <li><%= post.message %> - <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %></li>
+        <%})%>
+    </ol>
 </body>
 <%- include('_footer') -%>
 </html>
