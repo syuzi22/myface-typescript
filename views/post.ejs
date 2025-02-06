@@ -4,20 +4,23 @@
             <img class="post-image" src="<%= post.imageUrl %>" alt="Post Image">
         </div>
         <div class="message-container">
-            <div class="user-name"><%= post.postedBy.username %></div> 
+            <% if (!!post.postedBy && !!post.postedBy.username) { %>
+                <div class="user-name"><%= post.postedBy.username %></div> 
+            <% } %>
             <div class="post-date"><%= format(post.createdAt, "yyyy-MM-dd") %></div>
             <p><%= post.message %></p> 
-            <footer>
-                <div class="likebuttons-container">
-                    <form method="post" action="<%=post.id%>/like">
-                    <button type="submit"><%= post.likedBy.length %> 👍</button>
-                    </form>
-                    <form method="post" action="<%=post.id%>/dislike">
-                    <button type="submit"><%= post.dislikedBy.length %> 👎</button>
-                    </form>
-                </div>
-            </footer>
+            <% if (!!post.likedBy && !!post.dislikedBy) { %>
+                <footer>
+                    <div class="likebuttons-container">
+                        <form method="post" action="<%=post.id%>/like">
+                            <button type="submit"><%= post.likedBy.length %> 👍</button>
+                        </form>
+                        <form method="post" action="<%=post.id%>/dislike">
+                            <button type="submit"><%= post.dislikedBy.length %> 👎</button>
+                        </form>
+                    </div>
+                </footer>
+            <% } %>
         </div>
-       
     </div>
 </article>
