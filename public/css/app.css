@@ -75,6 +75,7 @@ ul {
     width: 100%;
     margin-top: 20px;
     margin-bottom: 20px;
+    transition: background 2s ease-in-out;
 }
 
 .post-list-container {
@@ -89,6 +90,17 @@ ul {
         min-width: 240px;
         max-width: 340px;
     } 
+}
+
+.post-list-button {
+    cursor: pointer;
+    padding: 12px 8px;
+    border-radius: 8px;
+}
+
+.post-list-button:hover {
+    background-color: #2985FF;
+    color: #DCDCDC
 }
 
 .post-date {
