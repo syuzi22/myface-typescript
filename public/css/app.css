@@ -28,6 +28,8 @@ ul {
     align-items: center;
     justify-content: center;
     background-color: #151820;
+    padding: 8px 16px;
+    
     a {
         color: #DCDCDC;
     }
