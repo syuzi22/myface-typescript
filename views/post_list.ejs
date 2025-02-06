@@ -2,28 +2,29 @@
 <%- include('_head') -%>
 <%- include('_header') -%>
 <body>
-<h1>Posts</h1>
-<ul class="post-list-container">
-    <% postList.results.forEach(function(post) {%>
-        <li>
-            <div class="profile-container">
-                <div>
-                    <img src="<%= post.postedBy.profileImageUrl %>" class="profile-image" alt="User Profile image" width="50" height="50"> 
+    <h1>Posts</h1>
+    <button type="button">Click Me!</button>
+    <ul class="post-list-container">
+        <% postList.results.forEach(function(post) {%>
+            <li>
+                <div class="profile-container">
+                    <div>
+                        <img src="<%= post.postedBy.profileImageUrl %>" class="profile-image" alt="User Profile image" width="50" height="50"> 
+                    </div>
+                    <span><%= post.postedBy.name %></span> 
                 </div>
-                <span><%= post.postedBy.name %></span> 
-            </div>
-            <%- include('post', {post: post}) %>
-        </li>
-    <% }); %>
-</ul>
-<footer>
-    <%if (postList.next) { %>
-    <a href="<%= postList.next %>">Next</a>
-    <% } %>
-    <%if (postList.previous) { %>
-    <a href="<%= postList.previous %>">Previous</a>
-    <% } %>
-</footer>
+                <%- include('post', {post: post}) %>
+            </li>
+        <% }); %>
+    </ul>
+    <footer>
+        <%if (postList.next) { %>
+        <a href="<%= postList.next %>">Next</a>
+        <% } %>
+        <%if (postList.previous) { %>
+        <a href="<%= postList.previous %>">Previous</a>
+        <% } %>
+    </footer>
 </body>
 <%- include('_footer') -%>
 </html>
