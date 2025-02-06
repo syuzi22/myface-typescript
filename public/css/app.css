@@ -110,6 +110,7 @@ ul {
 }
 
 .post-image {
+    object-fit: cover;
     height: 150;
     width: 100%;
 }
@@ -219,6 +220,7 @@ ul {
 }
 
 .mobile-menu-close {
+    cursor: pointer;
     text-align: right;
     padding: 16px;
     font-size: 24px;
@@ -230,6 +232,7 @@ ul {
 }
 
 .mobile-menu-button {
+    cursor: pointer;
     position: absolute;
     right: 0;
     z-index: 10;
