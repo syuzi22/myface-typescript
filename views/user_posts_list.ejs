@@ -1,0 +1,10 @@
+<div class="user-posts-container">
+    <span>title</span>
+    <ul>
+        <%posts.map(post => {%>
+             <li>
+                <%- include('post', {post: post}) %>
+             </li>
+        <%})%>
+    </ul>
+</div>
