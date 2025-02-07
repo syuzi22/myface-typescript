@@ -1,7 +1,14 @@
 <html lang="en-gb">
 <%- include('_head') -%>
+
 <body>
+    <%- include('_mobile-header') -%>
     <div class="user-profile-container" style="background-image: url('<%= user.coverImageUrl%>');">
+        <button type="button" class="mobile-menu-button" id="mobile-menu-button">
+            <div></div>
+            <div></div>
+            <div></div>
+        </button>
         <div class="user-details-container">
             <img src="<%= user.profileImageUrl %>" alt="User Profile image" class="user-details-image"> 
             <div class="user-name-container">

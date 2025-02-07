@@ -3,7 +3,7 @@
 <%- include('_header') -%>
 <body>
     <h1>Posts</h1>
-    <button type="button">Click Me!</button>
+    <button type="button" id="post-list-colour-change-button" class="post-list-button">Click Me!</button>
     <ul class="post-list-container">
         <% postList.results.forEach(function(post) {%>
             <li>
@@ -19,10 +19,10 @@
     </ul>
     <footer>
         <%if (postList.next) { %>
-        <a href="<%= postList.next %>">Next</a>
+            <a href="<%= postList.next %>">Next</a>
         <% } %>
         <%if (postList.previous) { %>
-        <a href="<%= postList.previous %>">Previous</a>
+            <a href="<%= postList.previous %>">Previous</a>
         <% } %>
     </footer>
 </body>
